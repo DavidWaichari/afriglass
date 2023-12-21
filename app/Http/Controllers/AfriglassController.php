@@ -23,6 +23,11 @@ class AfriglassController extends Controller
         $services = Service::all();
         return view('afriglass/projects',compact('services'));
     }
+    public function contact()
+    {
+        $services = Service::all();
+        return view('afriglass/contact',compact('services'));
+    }
     public function serviceDetails($slug)
     {
         $service = Service::where('slug', $slug)->first();
