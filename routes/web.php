@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\AfriglassController::class, 'index']);
 Route::get('/about', [App\Http\Controllers\AfriglassController::class, 'about']);
+Route::get('/projects', [App\Http\Controllers\AfriglassController::class, 'projects']);
+Route::get('/projects/{slug}', [App\Http\Controllers\AfriglassController::class, 'projectDetails']);
 Route::get('/services/{slug}', [App\Http\Controllers\AfriglassController::class, 'serviceDetails']);
 
 Auth::routes();
