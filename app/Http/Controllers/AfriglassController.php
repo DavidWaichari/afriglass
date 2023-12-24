@@ -20,8 +20,8 @@ class AfriglassController extends Controller
     }
     public function projects()
     {
-        $services = Service::all();
-        return view('afriglass/projects',compact('services'));
+        $projects = Project::orderBy('created_at', 'desc')->paginate(6);
+        return view('afriglass/projects',compact('projects'));
     }
     public function contact()
     {
