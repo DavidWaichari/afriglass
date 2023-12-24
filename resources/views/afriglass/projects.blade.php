@@ -34,7 +34,6 @@
       <div class="row">
         @foreach($projects as $project)
         <div class="col-md-4">
-          <a href="">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               @if ($project->getFirstMediaUrl('featured_photos') != '')
@@ -47,7 +46,7 @@
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="#">{{$project->name}}
+                    <a href="/projects/{{$project->slug}}">{{$project->name}}
                   </h2>
                 </div>
                 <div class="card-body-a">
@@ -56,16 +55,17 @@
                   </div>
                 </div>
                 <div class="card-footer-a">
+                  <a href="/projects/{{$project->slug}}">
                   <ul class="card-info d-flex justify-content-around">
                     <li>
-                     <h4>View Details</h4>
+                      <h4>View Details</h4>
                     </li>
                   </ul>
+                </a>
                 </div>
               </div>
             </div>
           </div>
-        </a>
         </div>
         @endforeach
       </div>

@@ -32,6 +32,8 @@ class ProjectController extends Controller
         
         if ($request->is_published == 'on') {
             $request['is_published'] = 'yes';
+        }else{
+            $request['is_published'] = 'no';
         }
         $project = Project::create($request->all());
 

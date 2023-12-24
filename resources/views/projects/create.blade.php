@@ -42,6 +42,10 @@
                   <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Location" name="location">
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputPassword1">Youtube Link</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Location" name="youtube_link">
+                </div>
+                <div class="form-group">
                     <label>Description</label>
                     <textarea class="form-control" rows="3" placeholder="Enter ..." name="description"></textarea>
                   </div>

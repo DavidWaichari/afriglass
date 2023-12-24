@@ -41,6 +41,7 @@
                   <th>Name</th>
                   <th>Location</th>
                   <th>Description</th>
+                  <th>Youtube Link</th>
                   <th>Manage</th>
                 </tr>
                 </thead>
@@ -52,6 +53,7 @@
                     <td>{{$project->name}}</td>
                     <td>{{$project->location}}</td>
                     <td>{{$project->description}}</td>
+                    <td><a href="{{$project->youtube_link}}">{{$project->youtube_link}}</a></td>
                     <td>
                       <a href="">Edit</a>
                       <a href="">Delete</a>
@@ -66,6 +68,7 @@
                   <th>Name</th>
                   <th>Location</th>
                   <th>Description</th>
+                  <th>Youtube Link</th>
                   <th>Manage</th>
                 </tr>
                 </tfoot>
