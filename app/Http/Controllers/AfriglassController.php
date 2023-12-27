@@ -46,7 +46,17 @@ class AfriglassController extends Controller
     public function projectDetails($slug)
     {
         $project = Project::where('slug', $slug)->first();
+        $url = $project->youtube_link;
 
-        return view('afriglass/project_details',compact('project'));
+        // Parse the URL to get the query string
+        $parsedUrl = parse_url($url);
+
+        // Parse the query string to get the parameters
+        parse_str($parsedUrl['query'], $queryParams);
+
+        // Get the value of the 'v' parameter
+        $videoId = $queryParams['v'];
+
+        return view('afriglass/project_details',compact('project','videoId'));
     }
 }
