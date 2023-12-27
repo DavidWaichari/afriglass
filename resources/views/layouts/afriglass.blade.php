@@ -43,7 +43,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="/">AfriGlass & <span class="color-b">Aluminium</span></a>
+      <a class="navbar-brand text-brand" href="/">AfriGlass & <span class="color-b">Aluminium</span> <br><p style="font-weight: 100;font-size:15px;padding:0px;margin:0px;color:blue">Elegance at its best!</p></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -54,6 +54,9 @@
 
           <li class="nav-item">
             <a class="nav-link " href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/services">Services</a>
           </li>
 
           <li class="nav-item">

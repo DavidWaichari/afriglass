@@ -7,7 +7,7 @@
           <div class="row">
             <div class="col-md-12 col-lg-8">
               <div class="title-single-box">
-                <h1 class="title-single">{{$service->name}}</h1>
+                <h1 class="title-single">Services</h1>
               </div>
             </div>
             <div class="col-md-12 col-lg-4">
@@ -34,16 +34,13 @@
                 <img src="/afriglass/assets/img/services/{{$service->image}}" alt="Image" width="600" height="800">
             </div>
             <div class="col-md-6">
-                <div class="container mt-5">
+                <div class="container">
                     <div class="jumbotron">
-                      <h1 class="display-4">Welcome to AfriGlass & Aluminium Solutions</h1>
-                      <p class="lead">Elegance at its best!</p>
+                      <h1 class="display-4">{{$service->name}}</h1>
                     </div>
-                  
                     <div class="card mb-4">
                       <div class="card-body">
-                        <h2>{{$service->name}}</h2>
-                        <p>{{$service->description}}</p>
+                        <p>{!!$service->description!!}</p>
                       </div>
                     </div>
                   </div>                  

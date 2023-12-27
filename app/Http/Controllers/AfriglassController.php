@@ -28,6 +28,11 @@ class AfriglassController extends Controller
         $projects = Project::orderBy('created_at', 'desc')->paginate(6);
         return view('afriglass/projects',compact('projects'));
     }
+    public function services()
+    {
+        $services = Service::all();
+        return view('afriglass/services',compact('services'));
+    }
     public function contact()
     {
         $services = Service::all();
