@@ -14,7 +14,8 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\AfriglassController::class, 'index']);
+// Route::get('/', [App\Http\Controllers\AfriglassController::class, 'index']);
+Route::get('/', [App\Http\Controllers\AfriglassController::class, 'index2']);
 Route::get('/about', [App\Http\Controllers\AfriglassController::class, 'about']);
 Route::get('/projects', [App\Http\Controllers\AfriglassController::class, 'projects']);
 Route::get('/contact', [App\Http\Controllers\AfriglassController::class, 'contact']);

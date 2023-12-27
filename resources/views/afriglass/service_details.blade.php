@@ -31,7 +31,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-                <img src="/afriglass/assets/img/property-10.jpg" alt="" class="img-fluid">
+                <img src="/afriglass/assets/img/services/{{$service->image}}" alt="Image" width="600" height="800">
             </div>
             <div class="col-md-6">
                 <div class="container mt-5">
