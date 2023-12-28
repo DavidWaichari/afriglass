@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('location')->nullable();
             $table->string('is_published')->nullable();
             $table->string('slug')->nullable();
+            $table->timestamp('project_date')->nullable();
             $table->string('youtube_link')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();

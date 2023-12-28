@@ -30,9 +30,18 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="/admin/projects" method="POST" enctype="multipart/form-data">
+            <form action="/admin/projects" method="POST" enctype="multipart/form-data" autocomplete="off">
                 @csrf
               <div class="card-body">
+                <div class="form-group">
+                  <label>Project Date</label>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" name="project_date" required>
+                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
@@ -93,6 +102,10 @@
 <script>
 $(function () {
   bsCustomFileInput.init();
+  //Date picker
+  $('#reservationdate').datetimepicker({
+      format: 'YYYY-MM-DD'
+  });
 });
 </script>
 @endsection

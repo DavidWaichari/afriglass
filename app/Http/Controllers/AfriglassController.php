@@ -25,7 +25,7 @@ class AfriglassController extends Controller
     }
     public function projects()
     {
-        $projects = Project::orderBy('created_at', 'desc')->paginate(6);
+        $projects = Project::orderBy('project_date', 'desc')->paginate(6);
         return view('afriglass/projects',compact('projects'));
     }
     public function services()

@@ -12,7 +12,7 @@ class Project extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
     
-    protected $fillable = ['name','location','description','slug','is_published','youtube_link'];
+    protected $fillable = ['name','location','description','slug','is_published','youtube_link', 'project_date'];
 
     protected static function booted()
     {

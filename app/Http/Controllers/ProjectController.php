@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use Carbon\Carbon;
 
 class ProjectController extends Controller
 {
@@ -12,7 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderBy('created_at', 'desc')->get();
+        $projects = Project::orderBy('project_date', 'desc')->get();
         return view('projects/index',compact('projects'));
     }
 
@@ -58,7 +59,8 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return view('projects/details', compact('project'));
     }
 
     /**
@@ -66,7 +68,8 @@ class ProjectController extends Controller
      */
     public function edit(string $id)
     {
-       
+        $project = Project::findOrFail($id);
+        return view('projects/edit', compact('project'));
     }
 
     /**
@@ -82,8 +85,16 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        if ($product->getFirstMediaURL('products_images') !='') {
-            $product->clearMediaCollection('products_images');
+        $project = Project::find($id);
+        if ($project->getFirstMediaURL('featured_photos') !='') {
+            $project->clearMediaCollection('featured_photos');
         }
+        if ($project->getFirstMediaURL('project_photos') !='') {
+            $project->clearMediaCollection('project_photos');
+        }
+
+        $project->delete();
+
+        return redirect('/admin/projects');
     }
 }

@@ -37,11 +37,12 @@
                 <thead>
                 <tr>
                   <th>SNO</th>
-                  <th>Added On</th>
+                  <th>Project Date</th>
                   <th>Name</th>
                   <th>Location</th>
                   <th>Description</th>
                   <th>Youtube Link</th>
+                  <th>Added On</th>
                   <th>Manage</th>
                 </tr>
                 </thead>
@@ -49,14 +50,14 @@
                   @foreach ($projects as $project)
                   <tr>
                     <td>{{$loop->index + 1}}</td>
-                    <td>{{$project->created_at}}</td>
+                    <td>{{$project->project_date}}</td>
                     <td>{{$project->name}}</td>
                     <td>{{$project->location}}</td>
                     <td>{{$project->description}}</td>
                     <td><a href="{{$project->youtube_link}}">{{$project->youtube_link}}</a></td>
+                    <td>{{$project->created_at}}</td>
                     <td>
-                      <a href="">Edit</a>
-                      <a href="">Delete</a>
+                     <a href="/admin/projects/{{$project->id}}" type="button" class="btn btn-primary btn-sm">View Details</a>
                     </td>
                   </tr>
                   @endforeach

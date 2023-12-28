@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 justify-content-center">
           <div class="row justify-content-between">
             <div class="col-md-12 col-lg-12 section-md-t3">
               <div class="row">

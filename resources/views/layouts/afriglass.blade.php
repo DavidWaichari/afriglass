@@ -21,7 +21,6 @@
   <link href="/afriglass/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/afriglass/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/afriglass/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="/afriglass/assets/css/style.css" rel="stylesheet">
   @section('styles')
@@ -280,7 +279,6 @@
   <script src="/afriglass/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/afriglass/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/afriglass/assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
   <script src="/afriglass/assets/js/main.js"></script>
   @section('scripts')
