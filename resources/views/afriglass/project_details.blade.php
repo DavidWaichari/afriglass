@@ -1,4 +1,9 @@
 @extends('layouts.afriglass')
+@section('styles')
+<style>
+
+</style>
+@endsection
 @section('main-content')
 <main id="main">
   <!-- ======= Intro Single ======= -->
@@ -31,23 +36,21 @@
   <section class="property-single nav-arrow-b">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-12 col-md-12">
+        <div class="col-md-12">
           <div id="property-single-carousel" class="swiper">
             <div class="swiper-wrapper">
-              <div class="carousel-item-b swiper-slide">
-                <img src="/afriglass/assets/img/slide-1.jpg" alt="">
-              </div>
-              <div class="carousel-item-b swiper-slide">
-                <img src="/afriglass/assets/img/slide-2.jpg" alt="">
-              </div>
+              @foreach($project->getMedia('project_photos') as $photo)
+                <div class="carousel-item-b swiper-slide">
+                  <img src="{{ $photo->getUrl() }}" alt="Photo"  class="img-a img-fluid" width="600" height="800">
+                </div>  
+              @endforeach
             </div>
           </div>
           <div class="property-single-carousel-pagination carousel-pagination"></div>
         </div>
       </div>
-
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <div class="row justify-content-between">
             <div class="col-md-12 col-lg-12 section-md-t3">
               <div class="row">
@@ -73,7 +76,11 @@
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-              <iframe src="https://www.youtube.com/embed/{{$videoId}}" width="50%" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              @if ($videoId != '')
+              <iframe src="https://www.youtube.com/embed/{{$videoId}}" width="50%" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>   
+              @else
+               <h4>No Footage Found</h4>   
+              @endif
             </div>
           </div>
         </div>
@@ -81,4 +88,9 @@
     </div>
   </section><!-- End Property Single-->
 </main><!-- End #main -->
+@endsection
+@section('scripts')
+<script>
+  
+</script>
 @endsection

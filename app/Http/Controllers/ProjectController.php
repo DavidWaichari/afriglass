@@ -29,7 +29,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'featured_photo.*' => 'image|mimes:jpeg,png,jpg,gif', // Adjust validation rules as needed
+        ]);
+
         if ($request->is_published == 'on') {
             $request['is_published'] = 'yes';
         }else{
@@ -39,6 +42,12 @@ class ProjectController extends Controller
 
         if($request->hasFile('featured_photo') && $request->file('featured_photo')->isValid()){
             $project->addMediaFromRequest('featured_photo')->toMediaCollection('featured_photos');
+        }
+        //upload photo gallery
+        if($request->hasFile('project_photos')){
+            foreach ($request->file('project_photos') as $photo) {
+                $project->addMedia($photo)->toMediaCollection('project_photos');
+            }
         }
 
         return redirect('/admin/projects');

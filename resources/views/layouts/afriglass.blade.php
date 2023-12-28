@@ -24,7 +24,8 @@
 
   <!-- Template Main CSS File -->
   <link href="/afriglass/assets/css/style.css" rel="stylesheet">
-
+  @section('styles')
+  @show
   <!-- =======================================================
   * Template Name: EstateAgency
   * Updated: Sep 18 2023 with Bootstrap v5.3.2
@@ -282,7 +283,8 @@
 
   <!-- Template Main JS File -->
   <script src="/afriglass/assets/js/main.js"></script>
-
+  @section('scripts')
+  @show
 </body>
 
 </html>
