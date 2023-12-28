@@ -38,6 +38,7 @@
                 <tr>
                   <th>SNO</th>
                   <th>Project Date</th>
+                  <th>Is Published</th>
                   <th>Name</th>
                   <th>Location</th>
                   <th>Description</th>
@@ -51,6 +52,7 @@
                   <tr>
                     <td>{{$loop->index + 1}}</td>
                     <td>{{$project->project_date}}</td>
+                    <td>{{$project->is_published}}</td>
                     <td>{{$project->name}}</td>
                     <td>{{$project->location}}</td>
                     <td>{{$project->description}}</td>
@@ -65,11 +67,13 @@
                 <tfoot>
                 <tr>
                   <th>SNO</th>
-                  <th>Added On</th>
+                  <th>Project Date</th>
+                  <th>Is Published</th>
                   <th>Name</th>
                   <th>Location</th>
                   <th>Description</th>
                   <th>Youtube Link</th>
+                  <th>Added On</th>
                   <th>Manage</th>
                 </tr>
                 </tfoot>

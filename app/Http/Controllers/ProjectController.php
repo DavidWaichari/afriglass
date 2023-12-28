@@ -77,7 +77,34 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $project = Project::find($id);
+        if ($request->is_published == 'on') {
+            $request['is_published'] = 'yes';
+        }else{
+            $request['is_published'] = 'no';
+        }
+        
+        if($request->hasFile('featured_photo') && $request->file('featured_photo')->isValid()){
+            if ($project->getFirstMediaURL('featured_photos') !='') {
+                $project->clearMediaCollection('featured_photos');
+            }
+            $project->addMediaFromRequest('featured_photo')->toMediaCollection('featured_photos');
+        }
+        //upload photo gallery
+        if($request->hasFile('project_photos')){
+            if ($project->getMedia('project_photos') !='') {
+                foreach ($project->getMedia('project_photos') as $photo) {
+                    $project->clearMediaCollection('project_photos');
+                }
+                
+            }
+            
+            foreach ($request->file('project_photos') as $photo) {
+                $project->addMedia($photo)->toMediaCollection('project_photos');
+            }
+        }
+        $project->update($request->all());
+        return redirect('/admin/projects');
     }
 
     /**
@@ -89,8 +116,11 @@ class ProjectController extends Controller
         if ($project->getFirstMediaURL('featured_photos') !='') {
             $project->clearMediaCollection('featured_photos');
         }
-        if ($project->getFirstMediaURL('project_photos') !='') {
-            $project->clearMediaCollection('project_photos');
+        if ($project->getMedia('project_photos') !='') {
+            foreach ($project->getMedia('project_photos') as $photo) {
+                $project->clearMediaCollection('project_photos');
+            }
+            
         }
 
         $project->delete();

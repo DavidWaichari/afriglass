@@ -101,7 +101,7 @@
             @endif
 
             <div class="mt-4">
-                <a href="/admin/project/{{$project->id}}/edit">
+                <a href="/admin/projects/{{$project->id}}/edit">
               <div class="btn btn-primary btn-lg btn-flat">
                 <i class="fas fa-edit fa-lg mr-2"></i>
                 Edit
