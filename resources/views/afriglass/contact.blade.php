@@ -9,7 +9,13 @@
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Contact US</h1>
-            <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>
+            <span class="color-text-a">
+              @if(Session::has('success'))
+              <div class="alert alert-success">
+                  {{ Session::get('success') }}
+              </div>
+            @endif
+            </span>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -35,16 +41,18 @@
         <div class="col-sm-12">
           <div class="contact-map box">
             <div id="map" class="contact-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> --}}
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.3586900674!2d36.68258178264422!3d-1.3028602845947004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi!5e0!3m2!1sen!2ske!4v1703859843596!5m2!1sen!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
         <div class="col-sm-12 section-t8">
           <div class="row">
             <div class="col-md-7">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <form action="/contact" method="post">
+                @csrf
                 <div class="row">
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-12 mb-3">
                     <div class="form-group">
                       <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
                     </div>
@@ -52,6 +60,11 @@
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
                       <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <input name="phone_number" type="text" class="form-control form-control-lg form-control-a" placeholder="Your Phone Number" required>
                     </div>
                   </div>
                   <div class="col-md-12 mb-3">
@@ -64,15 +77,7 @@
                       <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
                     </div>
                   </div>
-                  <div class="col-md-12 my-3">
-                    <div class="mb-3">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-12 text-center">
+                  <div class="col-md-12 text-center mt-3">
                     <button type="submit" class="btn btn-a">Send Message</button>
                   </div>
                 </div>

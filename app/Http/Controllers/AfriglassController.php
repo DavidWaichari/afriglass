@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Project;
+use App\Mail\SendEmail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class AfriglassController extends Controller
 {
@@ -38,6 +41,24 @@ class AfriglassController extends Controller
     {
         $services = Service::all();
         return view('afriglass/contact',compact('services'));
+    }
+
+    public function sendMessage(Request $request)
+    {
+        $data = [
+            "name" => $request->name,
+            "phone_number" => $request->phone_number,
+            "email" => $request->email,
+            "subject" => $request->subject,
+            "message" => $request->message,
+        ];
+    
+        Mail::to('dwaichari@gmail.com')->send(new SendEmail($data['name'], $data['phone_number'],$data['email'], $data['subject'], $data['message']));
+        
+        Session::flash('success', 'Message received successfully. We shall get back to you! Feel free to call us through the contacts provided');
+
+        return redirect('/contact');
+       
     }
     public function serviceDetails($slug)
     {
