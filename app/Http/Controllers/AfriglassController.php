@@ -16,7 +16,7 @@ class AfriglassController extends Controller
     public function index2()
     {
         $services = Service::all();
-        $projects = Project::orderBy('project_date', 'desc')->get()->take(5);
+        $projects = Project::orderBy('project_date', 'desc')->where('is_published','yes')->get()->take(5);
         return view('afriglass/index2',compact('services','projects'));
     }
     public function about()
@@ -26,7 +26,7 @@ class AfriglassController extends Controller
     }
     public function projects()
     {
-        $projects = Project::orderBy('project_date', 'desc')->paginate(6);
+        $projects = Project::orderBy('project_date', 'desc')->where('is_published','yes')->paginate(6);
         return view('afriglass/projects',compact('projects'));
     }
     public function services()
