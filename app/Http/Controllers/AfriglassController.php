@@ -16,7 +16,8 @@ class AfriglassController extends Controller
     public function index2()
     {
         $services = Service::all();
-        return view('afriglass/index2',compact('services'));
+        $projects = Project::orderBy('project_date', 'desc')->get()->take(5);
+        return view('afriglass/index2',compact('services','projects'));
     }
     public function about()
     {
