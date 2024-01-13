@@ -126,7 +126,7 @@
         <div class="col-sm-12 col-md-4">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">AfriGlass $ Aluminium </h3>
+              <h3 class="w-title-a text-brand">AfriGlass & Aluminium </h3>
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
@@ -190,7 +190,7 @@
                   <i class="bi bi-chevron-right"></i> <a href="#">Youtube</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Tik Tok</a>
+                  <i class="bi bi-chevron-right"></i> <a href="#">TikTok</a>
                 </li>
                 <li class="item-list-a">
                   <i class="bi bi-chevron-right"></i> <a href="#">Instagram</a>
@@ -215,16 +215,16 @@
                 <a href="/">Home</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <a href="/about">About</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Property</a>
+                <a href="/services">Services</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Blog</a>
+                <a href="/projects">Projects</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <a href="/contact">Contact</a>
               </li>
             </ul>
           </nav>
@@ -255,7 +255,7 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">EstateAgency</span> All Rights Reserved.
+              <span class="color-a">AfriGlass & Aluminium</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
