@@ -94,10 +94,10 @@
                   </div>
                   <div class="icon-box-content">
                     <p class="mb-1">Email.
-                      <span class="color-a">contact@example.com</span>
+                      <span class="color-a">info@afriglassandaluminium.co.ke</span>
                     </p>
                     <p class="mb-1">Phone.
-                      <span class="color-a">+54 356 945234</span>
+                      <span class="color-a">+254703879237 | +254731033718</span>
                     </p>
                   </div>
                 </div>
@@ -112,8 +112,8 @@
                   </div>
                   <div class="icon-box-content">
                     <p class="mb-1">
-                      Manhattan, Nueva York 10036,
-                      <br> EE. UU.
+                      Nairobi
+                      <br> Kenya
                     </p>
                   </div>
                 </div>
