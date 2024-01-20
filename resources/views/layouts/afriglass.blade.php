@@ -136,10 +136,10 @@
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> info@afriglassandaluminium.co.ke
+                  <span class="color-text-a">Email: </span> info@afriglassandaluminium.co.ke
                 </li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> +254703879237 | +254731033718
+                  <span class="color-text-a">Phone: </span> +254703879237 | +254731033718
                 </li>
               </ul>
             </div>
